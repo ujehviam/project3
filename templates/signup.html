@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">Project3 LTD</div>
+      <nav class="menu">
+        <a href="{{ url_for('login') }}">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="login-container">
+    <h2>Sign Up</h2>
+    <form>
+      <input type="text" placeholder="First Name" required />
+      <input type="text" placeholder="Last Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <div class="button-group">
+        <button type="submit" class="signup-btn">Register</button>
+      </div>
+    </form>
+  </div>
+  <footer>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">Service</a>
+      <a href="#">About Us</a>
+      <a href="#">Career</a>
+    </div>
+  </footer>
+</body>
+</html>

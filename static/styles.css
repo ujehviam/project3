@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Login form styles */
+.login-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 320px;
+  margin-top: 100px; /* leave space for fixed header */
+  margin-bottom: 80px; /* leave space for fixed footer */
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.login-btn:hover {
+  background: #45a049;
+}
+
+.signup-btn {
+  background: #2196F3;
+  color: white;
+}
+
+.signup-btn:hover {
+  background: #1976D2;
+}
+
+.login-container .footer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-container .footer a {
+  text-decoration: none;
+  color: #333;
+}
+
+.login-container .footer a:hover {
+  text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+  width: 100%;
+  background-color: #333;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-links {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
