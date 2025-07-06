@@ -1,10 +1,16 @@
 import sqlite3
 from flask import Flask, render_template, request, redirect, url_for, flash
+import os
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
 
 DATABASE = "Project1.db"
+
+UPLOAD_FOLDER = 'static/uploads'
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
@@ -61,6 +67,14 @@ def register():
         email = request.form["email"]
         password = request.form["password"]
         phone_number = request.form["phone_number"]
+        profile_picture = request.files["profile_picture"]
+
+        if profile_picture:
+            filename = secure_filename(profile_picture.filename)
+            picture_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            profile_picture.save(picture_path)
+        else:
+            filename = None
 
         try:
             conn = get_db_connection()
@@ -70,8 +84,8 @@ def register():
             )
             conn.commit()
             conn.close()
-            flash("Registration successful! You can now log in.", "success")
-            return redirect(url_for("login"))
+            # Instead of flashing, render the success page with picture
+            return render_template("success.html", filename=filename)
         except sqlite3.IntegrityError:
             flash("Error: Email already exists.", "error")
             return redirect(url_for("signup"))
