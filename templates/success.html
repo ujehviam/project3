@@ -12,7 +12,9 @@
     {% if filename %}
       <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Profile Picture" width="200" style="border-radius:8px; margin-bottom:20px;">
     {% endif %}
-    <p>You have successfully signed up. Please click the button below to log into your account.</p>
+    <p>You have successfully signed up. Please click the button below to log into your account.
+      this is a CI/CD test.
+    </p>
     <div class="button-group">
       <button class="login-btn" onclick="location.href='{{ url_for('login') }}'">Login</button>
     </div>
